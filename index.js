@@ -34,12 +34,10 @@ if (true) { // no saved dao
 // run program
 const run = async () => {
     try {
-        const addresses = await inquirer.askDaoAddresses()
-        Object.keys(addresses).map(function (key, index) {
-            daoConf.set(key, addresses[key])
-        });
 
-        console.log(daoConf.get('dao'));
+        await inquirer.getMints()
+        await inquirer.askDaoAddresses()
+
     } catch (err) {
         console.log(err)
     }
