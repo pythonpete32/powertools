@@ -54,6 +54,7 @@ const run = async () => {
 
         if(c.command == 'mint'){
             const mints = await inquirer.getMints();
+            await inquirer.confirmMints(mints)
             processing.saveTxConfig(mints)
         }
         if(c.command == 'payments'){
