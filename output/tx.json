@@ -1,1 +1,13 @@
-{"daoAddress":"0x0f1449527c458EDee87d19C39CA4f0326818aA46","tokenManagerAddress":"0xb0aaae4ac1f639391feedfb73a4bca4954cb8de2","votingAddress":"0x0f1449527c458EDee87d19C39CA4f0326818aA46","environment":"rinkeby","mints":[["0x0f1449527c458edee87d19c39ca4f0326818aa46","3000000000000000000"]],"burns":[]}
+{
+    "daoAddress": "0x0f1449527c458EDee87d19C39CA4f0326818aA46",
+    "tokenManagerAddress": "0xb0aaae4ac1f639391feedfb73a4bca4954cb8de2",
+    "votingAddress": "0x0f1449527c458EDee87d19C39CA4f0326818aA46",
+    "environment": "rinkeby",
+    "mints": [
+        ["0x0f1449527c458edee87d19c39ca4f0326818aa46", "324000000000000000000"],
+        ["0x0f1449527c458edee87d19c39ca4f0326818aa46", "33000000000000000000"],
+        ["0x0f1449527c458edee87d19c39ca4f0326818aa46", "999000000000000000000"],
+        ["0x0f1449527c458edee87d19c39ca4f0326818aa46", "1e+21"]
+    ],
+    "burns": []
+}

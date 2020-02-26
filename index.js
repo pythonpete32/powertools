@@ -39,39 +39,31 @@ const banner = () => {
 const run = async () => {
     banner()
 
-   
+    // login logic
+    const newDAO = await inquirer.login()
+    console.log(newDAO)
+    if (newDAO) {
+        await inquirer.askDaoAddresses()
+    }
 
-    try {
-        // login logic
-        const newDAO = await inquirer.login()
-        console.log(newDAO)
-        if (newDAO) {
-            await inquirer.askDaoAddresses()
-        }
-
-        // main menu
-        let c = await inquirer.menu()
-
-        if(c.command == 'mint'){
-            const mints = await inquirer.getMints();
-            await inquirer.confirmMints(mints)
-            processing.saveTxConfig(mints)
-        }
-        if(c.command == 'payments'){
-            console.log('paymenffts')
-        }
-        if(c.command == 'swap'){
-            console.log('swap')
-        }
-        if(c.command == 'permissions'){
-            console.log('permissions')
-        }
-        if(c.command == 'quit'){
-            console.log('quit')
-        }
-
-    } catch (err) {
-        console.log(err)
+    // main menu
+    let c = await inquirer.menu()
+    if (c.command == 'mint') {
+        const mints = await inquirer.getMints();
+        await inquirer.confirmMints(mints)
+        processing.saveTxConfig(mints)
+    }
+    if (c.command == 'payments') {
+        console.log('paymenffts')
+    }
+    if (c.command == 'swap') {
+        console.log('swap')
+    }
+    if (c.command == 'permissions') {
+        console.log('permissions')
+    }
+    if (c.command == 'quit') {
+        console.log('quit')
     }
 }
 run()
