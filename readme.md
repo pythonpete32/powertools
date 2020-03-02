@@ -1,8 +1,11 @@
 # Power tools
 > For Aragon Power users
-
 batches common cli transactions
 
+```
+npm i 
+node index.js 
+```
 ## behaviour
 - [x] on start up it loads the last DAO if there was one 
 - [x] asks user to use this dao or new
