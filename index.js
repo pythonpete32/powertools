@@ -11,10 +11,10 @@ const processing = require('./lib/processing');
 
 
 
-// data store TODO: persist Data from add DAO
+// data store TODO: persist Data from add DAO. 
 const pkg = require('./package.json')
 const daoConf = new Configstore(pkg.name)
-daoConf.set('tokenManager', '0xb0aaae4ac1f639391feedfb73a4bca4954cb8de2') // yes its hacky!
+daoConf.set('tokenManager', '0xb0aaae4ac1f639391feedfb73a4bca4954cb8de2')
 daoConf.set('network', 'rinkeby')
 
 // banner
@@ -31,8 +31,6 @@ const banner = () => {
         chalk.blue.bold('For Aragon Power Users')
     )
 }
-
-// check for saved dao
 
 
 // run program
@@ -51,7 +49,8 @@ const run = async () => {
     if (c.command == 'mint') {
         const mints = await inquirer.getMints();
         await inquirer.confirmMints(mints)
-        processing.saveTxConfig(mints)
+        await processing.saveTxConfig(mints)
+        await processing.submitTx()
     }
     if (c.command == 'payments') {
         console.log('paymenffts')
