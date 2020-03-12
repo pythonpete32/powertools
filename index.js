@@ -61,14 +61,15 @@ const run = async () => {
     }
     if (c.command == 'sourcecred') {
         const mode = await sc.mode()
-        //console.log(mode)
+        console.log(mode)
         await sc.startBackend()
         //console.log(mode.discourse)
         await sc.runSC(mode.discourse)
         await sc.calcCred()
         const cred = await sc.processCSV()
         if (mode.mintOrSave == 'save') {
-            console.log(chalk.greenBright('saved to ') + chalk.greenBright.bold(process.cwd() + 'toMint.csv'));
+            //await sc.resolveAddresses(cred)
+            console.log(chalk.greenBright('Saved to ') + chalk.greenBright.bold(process.cwd() + '/toMint.csv'));
             return
         }
 
