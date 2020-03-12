@@ -44,8 +44,8 @@ const run = async () => {
     //console.log(newDAO)
     if (newDAO) {
         const dao = await inquirer.askDaoAddresses()
-        console.log(dao)
-        console.log(daoConf)
+        //console.log(dao)
+        //console.log(daoConf)
     }
 
     // main menu
@@ -61,15 +61,21 @@ const run = async () => {
     }
     if (c.command == 'sourcecred') {
         const mode = await sc.mode()
+        console.log(mode)
         await sc.startBackend()
-        console.log(mode.discourse)
-        await sc.runSC(mode.discourse)
+        //console.log(mode.discourse)
+        //await sc.runSC(mode.discourse)
         await sc.calcCred()
         const cred = await sc.processCSV()
+        if (mode.mintOrSave == 'save') {
+            console.log(chalk.greenBright('saved to ') + chalk.greenBright.bold(process.cwd() + 'toMint.csv'));
+            return
+        }
+
         await inquirer.confirmMints(cred)
         await sc.resolveAddresses(cred)
-        const tx = await processing.saveTxConfig()
-        await processing.submitTx(tx)
+        //const tx = await processing.saveTxConfig()
+        await processing.submitTx()
         console.log(mode)
     }
     if (c.command == 'swap') {

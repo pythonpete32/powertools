@@ -1,17 +1,36 @@
 # Power tools
+
 > For Aragon Power users
-batches common cli transactions
+> batches common cli transactions
+
+### Pre Reqs
+
+-   aragonCLI > `0.7.0`
+
+### Setup
+
+1. clone the repo
 
 ```
-npm i 
-node index.js 
+https://github.com/pythonpete32/powertools.git
 ```
-## behaviour
-- [x] on start up it loads the last DAO if there was one 
-- [x] asks user to use this dao or new
-  - [x] if new enter the add dao flow
-- [x] drops into tool selection, displys all 4 tools with information
-  - [x] drops into tool flow
-  - [x] confirm submittion
-- [ ] submit transaction
-  
+
+2. install the Powertools application and link it globaly
+
+```
+npm i && npm link
+```
+
+3. run powertools with `powertools`
+
+### Sourcecred
+
+if using sourcecred, additial steps are required
+
+clone and install SourceCred
+
+```
+git clone https://github.com/sourcecred/sourcecred.git && cd sourcecred && npm i
+```
+
+instde the sourcecred folder run powertools with `powertools`
