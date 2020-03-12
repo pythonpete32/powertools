@@ -64,7 +64,7 @@ const run = async () => {
         console.log(mode)
         await sc.startBackend()
         //console.log(mode.discourse)
-        //await sc.runSC(mode.discourse)
+        await sc.runSC(mode.discourse)
         await sc.calcCred()
         const cred = await sc.processCSV()
         if (mode.mintOrSave == 'save') {
