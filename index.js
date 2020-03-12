@@ -61,7 +61,7 @@ const run = async () => {
     }
     if (c.command == 'sourcecred') {
         const mode = await sc.mode()
-        console.log(mode)
+        //console.log(mode)
         await sc.startBackend()
         //console.log(mode.discourse)
         await sc.runSC(mode.discourse)
